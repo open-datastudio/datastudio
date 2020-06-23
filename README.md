@@ -4,8 +4,8 @@ Open datastudio is a set of data-science, machine learning projects that integra
 
 | Project | Description | Integration Status |
 | ------- | ----------- | ------- |
-| [hive-metastore](https://github.com/open-datastudio/zeppelin) | Provides hive metastore server with Postgresql database | Done |
-| [jupyter](https://github.com/open-datastudio/spark) | Jupyter notebook | In progress (minimal features are working) |
+| [hive-metastore](https://github.com/open-datastudio/hive-metastore) | Provides hive metastore server with Postgresql database | Done |
+| [jupyter](https://github.com/open-datastudio/jupyter) | Jupyter notebook | In progress (minimal features are working) |
 | [spark](https://github.com/open-datastudio/spark) | It does not integrates to Staroid but publishes docker image for other projects | - |
 | [zeppelin](https://github.com/open-datastudio/zeppelin) | Integrates with Apache Zeppelin and Apache Spark on Kubernetes mode | Done |
 
