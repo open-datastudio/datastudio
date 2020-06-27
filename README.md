@@ -10,11 +10,11 @@ Also to fund the contributors of each individual projects via [StarRank](https:/
 
 | Project | Description | Integration Status |
 | ------- | ----------- | ------- |
-| [hive-metastore](https://github.com/open-datastudio/hive-metastore) | Provides hive metastore server with Postgresql database | Done |
-| [jupyter](https://github.com/open-datastudio/jupyter) | Jupyter Lab | In progress (minimal features are working) |
+| [hive-metastore](https://github.com/open-datastudio/hive-metastore) | Provides hive metastore server with Postgresql database | Integrated |
+| [jupyter](https://github.com/open-datastudio/jupyter) | Jupyter Lab | Integrated |
 | [spark](https://github.com/open-datastudio/spark) | It does not integrates to Staroid but publishes docker image for other projects | - |
-| [superset](https://github.com/open-datastudio/superset) | Apache Superset | In progress |
-| [zeppelin](https://github.com/open-datastudio/zeppelin) | Integrates with Apache Zeppelin and Apache Spark on Kubernetes mode | Done |
+| [superset](https://github.com/open-datastudio/superset) | Apache Superset | Integrated |
+| [zeppelin](https://github.com/open-datastudio/zeppelin) | Integrates with Apache Zeppelin and Apache Spark on Kubernetes mode | Integrated |
 
 
 ## How to contribute?
