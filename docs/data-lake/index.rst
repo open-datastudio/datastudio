@@ -2,12 +2,15 @@
 Data Lake
 ===============
 
-Build a Data lake 
+Build a data lake.
 
 
 .. toctree::
    :maxdepth: 2
 
-   Hive metastore <hive-metastore>   
+   Delta Lake <delta>
+   Apache Hudi <hudi>
+   Hive metastore <hive-metastore>
+   Spark thriftserver <spark-thriftserver>
 
 .. include:: ../ref.rst

@@ -6,16 +6,16 @@ It integrates open-source tools on the cloud and makes them ready to launch in a
 
 Key benefits
 
-  - Login once and authenticate to all open-source components (coming soon)
+  - Login once and use all open-source components
   - All components are running on the Kubernetes
-  - Run on the cloud with few clicks, no complex configuration and setup required.
+  - Run on the cloud with few clicks, works out of the box
 
 .. toctree::
    :maxdepth: 2
 
    notebook/index
    data-lake/index
-   data-processing/index
+   computing/index
    machine-learning/index
    business-intelligence/index
 
