@@ -98,6 +98,7 @@ html_static_path = ['_static']
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
+html_logo = '_static/open-datastudio-logo.svg'
 
 # Enable link of 'View page source'
 #html_show_sourcelink = False
