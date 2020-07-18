@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = u'Open Data Studio'
-copyright = u'Open Data Studio'
-author = u'Open Data Studio'
+copyright = u'Open Data Studio Authors'
+author = u'Open Data Studio Authors'
 
 # The short X.Y version
 version = u''
