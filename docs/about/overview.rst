@@ -6,7 +6,7 @@ It integrates open-source tools to build complete data processing and ML pipelin
 
 |overview-img|
 
-.. include:: ./ref.rst
+.. include:: ../ref.rst
 
 .. |overview-img| image:: ../_static/overview.png
    :width: 700px

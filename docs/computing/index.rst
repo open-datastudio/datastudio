@@ -5,9 +5,9 @@ Computing
 .. toctree::
    :maxdepth: 2
 
-   Apache Spark <spark>
-   Apache Flink <flink>
-   Dask <dask>
-   Ray <ray>
+   Spark Serverless <spark-serverless/index>
+   Flink (planned) <flink>
+   Dask (planned) <dask>
+   Ray (planned) <ray>
 
 .. include:: ../ref.rst
