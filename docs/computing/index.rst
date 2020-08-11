@@ -2,11 +2,13 @@
 Computing
 ===============
 
+Large scale, parallel/distributed computing.
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    Spark Serverless <spark-serverless/index>
-   Flink (planned) <flink>
+   Flink (Planned) <flink>
    Dask (planned) <dask>
    Ray (planned) <ray>
 

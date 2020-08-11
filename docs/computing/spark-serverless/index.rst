@@ -2,13 +2,25 @@
 Spark serverless
 ================
 
-https://github.com/open-datastudio/spark-serverless
+Apache Spark is a unified analytics engine for large-scale data processing.
+Open data studio provides instant access to the Spark cluster from anywhere without thinking about infrastructure and maintenance.
 
-Spark serverless provides instant access to the Spark cluster from anywhere without thinking about infrastructure and maintenance.
+Key features
+
+  - No infra setup required
+  - Spark 3.0
+  - Create spark cluster on Kubernetes on-demand
+  - Connect from anywhere through secure tunnel
+
+=============================== ===================================================================
+Open data studio repository     https://github.com/open-datastudio/spark-serverless
+Original repository             https://github.com/apache/spark
+Documentation                   https://spark.apache.org/docs/latest/
+=============================== ===================================================================
 
 
-Quickstart
-----------
+Spark serverless Quickstart
+---------------------------
 
  - `Spark serverless on Google Colab <https://colab.research.google.com/github/open-datastudio/spark-serverless/blob/master/notebooks/Spark_serverless_on_Colab.ipynb>`_
 
