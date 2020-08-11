@@ -8,7 +8,6 @@ It integrates open-source tools to build complete data processing and ML pipelin
    :maxdepth: 2
 
    about/index
-   getting-started/index
    notebook/index
    data-lake/index
    computing/index

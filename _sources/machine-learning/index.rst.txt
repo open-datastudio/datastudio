@@ -2,8 +2,10 @@
 Machine Learning
 ================
 
+Manage, serve your models.
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    MLflow server <mlflow-server>
    MLflow model serving <mlflow-model-serving>

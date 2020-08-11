@@ -2,14 +2,38 @@
 Jupyter
 ==============
 
-https://github.com/open-datastudio/jupyter
+The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text.
+Open data studio makes it easy to deploy on the cloud.
 
 Key features
 
+  - Click to deploy. No setup required
   - Jupyter Lab
+  - NVIDIA GPU, CUDA support for machine learning
   - Works with MLflow remote tracking server and artifact store out of the box
-  - NVIDIA GPU, CUDA support
-  - [Dask](https://dask.org/) dynamic cluster (work in progress)
   - Persistent storage for `~/work`
+  - Connect to :ref:`MLflow server`. No configuration required
+
+=============================== ===================================================================
+Launch page                     https://staroid.com/g/open-datastudio/jupyter
+Open data studio repository     https://github.com/open-datastudio/jupyter
+Original repository             https://github.com/jupyter/jupyter
+Documentation                   https://jupyter.readthedocs.io/en/latest/
+=============================== ===================================================================
+
+
+Jupyter Quickstart
+-------------------
+
+.. image:: https://staroid.com/api/run/button.svg
+   :target: https://staroid.com/g/open-datastudio/jupyter
+
+**Screenshots**
+
+|jupyter-screenshot|
 
 .. include:: ../ref.rst
+
+.. |jupyter-screenshot| image:: https://jupyter.org/assets/jupyterpreview.png
+   :width: 700px
+   :alt: Jupyter

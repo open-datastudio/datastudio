@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Computing" href="../computing/index.html" />
+    <link rel="next" title="Delta Lake" href="delta.html" />
     <link rel="prev" title="Hive metastore" href="hive-metastore.html" /> 
 </head>
 
@@ -87,13 +87,16 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Notebook</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Data Lake</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="delta.html">Delta Lake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hudi.html">Apache Hudi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hive-metastore.html">Hive metastore</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Spark thriftserver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hive-metastore.html">Hive Metastore</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Spark Thriftserver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#spark-thrift-server-quickstart">Spark thrift-server Quickstart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-spark-thriftserver-address">Get spark-thriftserver address</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="delta.html">Delta Lake (WIP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hudi.html">Apache Hudi (WIP)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../computing/index.html">Computing</a></li>
@@ -170,7 +173,48 @@
             
   <div class="section" id="spark-thriftserver">
 <h1>Spark thriftserver<a class="headerlink" href="#spark-thriftserver" title="Permalink to this headline">¶</a></h1>
-<p>Coming soon</p>
+<p>Spark thrift server allowing multiple remote clients to access Spark.
+It provides a generic JDBC endpoint that let any client including BI tools connect and access the power of Spark.
+Open data studio makes it easy to deploy on the cloud.</p>
+<p>Key features</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Allows JDBC/ODBC clients to execute SQL queries over JDBC and ODBC protocols on Apache Spark.</p></li>
+<li><p>Spark 3.0</p></li>
+<li><p>Spark cluster is automatically configured on Kubernetes</p></li>
+<li><p>Connect to <a class="reference internal" href="hive-metastore.html#hive-metastore"><span class="std std-ref">Hive metastore</span></a>. No configuration required</p></li>
+</ul>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Launch page</p></td>
+<td><p><a class="reference external" href="https://staroid.com/g/open-datastudio/spark-thriftserver">https://staroid.com/g/open-datastudio/spark-thriftserver</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Open data studio repository</p></td>
+<td><p><a class="reference external" href="https://github.com/open-datastudio/spark-thriftserver">https://github.com/open-datastudio/spark-thriftserver</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Original repository</p></td>
+<td><p><a class="reference external" href="https://github.com/apache/spark">https://github.com/apache/spark</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Documentation</p></td>
+<td><p><a class="reference external" href="https://spark.apache.org/docs/latest/sql-distributed-sql-engine.html">https://spark.apache.org/docs/latest/sql-distributed-sql-engine.html</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="spark-thrift-server-quickstart">
+<h2>Spark thrift-server Quickstart<a class="headerlink" href="#spark-thrift-server-quickstart" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://staroid.com/g/open-datastudio/spark-thriftserver"><img alt="https://staroid.com/api/run/button.svg" src="https://staroid.com/api/run/button.svg" /></a>
+</div>
+<div class="section" id="get-spark-thriftserver-address">
+<h2>Get spark-thriftserver address<a class="headerlink" href="#get-spark-thriftserver-address" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/open-datastudio/spark-thriftserver/blob/master/k8s/spark-thriftserver-info.yaml">spark-thriftserver-info</a> ConfigMap is created
+after deployment. The ConfigMap includes spark-thriftserver JDBC URL to connect.
+Other project can import this ConfigMap. <a class="reference external" href="https://docs.staroid.com/project/dependency.html">Learn more</a>.</p>
+</div>
 </div>
 
 
@@ -181,7 +225,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../computing/index.html" class="btn btn-neutral float-right" title="Computing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="delta.html" class="btn btn-neutral float-right" title="Delta Lake" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="hive-metastore.html" class="btn btn-neutral float-left" title="Hive metastore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
