@@ -1,8 +1,7 @@
 |ods-logo| Open Data Studio
 ==================================
 
-Open Data Studio (ODS) provides integrated environments for data analytics and machine learning.
-It integrates open-source tools to build complete data processing and ML pipeline on Kubernetes.
+Open data studio is an open initiative to bring machine learning and large scale data processing open-source software to click away for everyone.
 
 .. toctree::
    :maxdepth: 2

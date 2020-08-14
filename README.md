@@ -4,13 +4,13 @@
 </center>
 <br />
 
-# Open datastudio
+# Open data studio
 
-Open datastudio is a set of data-science, machine learning projects that integrates to [staroid](https://staroid.com).
+Open data studio is an open initiative to bring machine learning and large scale data processing open-source software to click away for everyone.
 
-Goal is to make projects ready to run in a few clicks without complex installation and maintenance.
+## Documentation
 
-Also to fund the contributors of each individual projects via [StarRank](https://staroid.com/site/starrank).
+Please visit [open-datastudio.io](https://open-datastudio.io)
 
 ## Projects
 
@@ -38,3 +38,9 @@ You can create issues or pull requests to contribute individual repositories und
 If you'd like to create a new integration project here, please create an [issue](https://github.com/open-datastudio/datastudio/issues) in this repository.
 
 We need your help!
+
+
+## License
+
+Open data studio is an open source projects.
+LICENSE file is included in each repository.
