@@ -4,13 +4,13 @@ Key benefits
 Machine learning pipeline
 -------------------------
 
-  ODS provides Jupyter, Zeppelin notebook to experiment, build your model on your favorite ML framework.
+  Open Data Studio provides Jupyter, Zeppelin notebook to experiment, build your model on your favorite ML framework.
   Trained model can be stored in MLflow model registry and then being deployed for serving using MLflow model serving.
 
 Distributed computing
 ----------------------
 
-  ODS integrates provides various distributed computing environment you can use out of the box.
+  Open Data Studio integrates various distributed computing environment you can use out of the box.
    
       - Apache Spark
       - Apache Flink (Work in progress)
