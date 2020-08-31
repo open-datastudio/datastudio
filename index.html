@@ -91,6 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="computing/index.html">Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine-learning/index.html">Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="business-intelligence/index.html">Business Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support/index.html">Support</a></li>
 </ul>
 
             
@@ -160,12 +161,54 @@
             
   <div class="section" id="ods-logo-open-data-studio">
 <h1><a class="reference internal" href="_images/open-datastudio-logo.png"><img alt="Open Datastudio" src="_images/open-datastudio-logo.png" style="width: 60px;" /></a> Open Data Studio<a class="headerlink" href="#ods-logo-open-data-studio" title="Permalink to this headline">¶</a></h1>
-<p>Open data studio is an open initiative to bring machine learning and large scale data processing open-source software to click away for everyone.</p>
+<p>Open data studio is a managed computing service on <a class="reference external" href="https://staroid.com">Staroid</a> cloud. Run your machine learning workloads without managing clusters and servers.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="technology">
+<h2>Technology<a class="headerlink" href="#technology" title="Permalink to this headline">¶</a></h2>
+<p>Use all the latest machine learning technology in a single place.
+Open data studio continues to integrate the best technologies for machine learning.</p>
+<p><a class="reference internal" href="_images/spark-logo.png"><img alt="Apache spark" src="_images/spark-logo.png" style="width: 80px;" /></a> <a class="reference internal" href="_images/ray-logo.png"><img alt="Ray" src="_images/ray-logo.png" style="width: 100px;" /></a> <a class="reference internal" href="_images/dask-logo.png"><img alt="Dask" src="_images/dask-logo.png" style="width: 100px;" /></a> <a class="reference internal" href="_images/delta-logo.png"><img alt="Delta lake" src="_images/delta-logo.png" style="width: 70px;" /></a> <a class="reference internal" href="_images/cuda-logo.png"><img alt="Nvidia CUDA" src="_images/cuda-logo.png" style="width: 70px;" /></a></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="easy-of-use">
+<h2>Easy of use<a class="headerlink" href="#easy-of-use" title="Permalink to this headline">¶</a></h2>
+<p>Access to the latest machine learning technology shouldn’t be more than a few clicks or a few lines of code away.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Install, configure spark and spinup spark cluster with 3 remotely running workers</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
+<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-spark&quot;</span><span class="p">,</span> <span class="n">worker_num</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="fully-managed">
+<h2>Fully managed<a class="headerlink" href="#fully-managed" title="Permalink to this headline">¶</a></h2>
+<p>Save time and reduce risk.
+Open data studio is maintained by the committers of the original open source project and industry experts
+on top of secure, reliable, and high performance cloud platform <a class="reference external" href="https://staroid.com">Staroid</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="open-source">
+<h2>Open source<a class="headerlink" href="#open-source" title="Permalink to this headline">¶</a></h2>
+<p>Open data studio is an open source project.
+You can easily see source code, understand how it works, and get involved.
+When you need, fork and get your own version of managed service!</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about/index.html">About</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="about/overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="about/key-benefits.html">Key benefits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebook/index.html">Notebook</a><ul>
@@ -174,17 +217,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data-lake/index.html">Data Lake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data-lake/delta.html">Delta lake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data-lake/hive-metastore.html">Hive Metastore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data-lake/spark-thriftserver.html">Spark Thriftserver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data-lake/delta.html">Delta Lake (WIP)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data-lake/hudi.html">Apache Hudi (WIP)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="computing/index.html">Computing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="computing/spark-serverless/index.html">Spark Serverless</a></li>
-<li class="toctree-l2"><a class="reference internal" href="computing/flink.html">Flink (Planned)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computing/spark/index.html">Spark</a></li>
 <li class="toctree-l2"><a class="reference internal" href="computing/dask.html">Dask (planned)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="computing/ray.html">Ray (planned)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computing/flink.html">Flink (Planned)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="machine-learning/index.html">Machine Learning</a><ul>
@@ -197,7 +239,9 @@
 <li class="toctree-l2"><a class="reference internal" href="business-intelligence/superset.html">Superset</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="support/index.html">Support</a></li>
 </ul>
+</div>
 </div>
 </div>
 
