@@ -41,7 +41,7 @@ Easy of use
 Access to the latest machine learning technology shouldn't be more than a few clicks or a few lines of code away.
 
 .. code-block:: python
-   :caption: Install, configure spark and spinup spark cluster with 3 remotely running workers
+   :caption: Install, configure and spinup spark cluster with 3 remotely running workers
 
    import ods
    spark = ods.spark("my-spark", worker_num=3).session()
@@ -53,7 +53,7 @@ Fully managed
 -------------
 
 Save time and reduce risk.
-Open data studio is maintained by the committers of the original open source project and industry experts
+Open data studio is maintained by the committers of the open source project and industry experts
 on top of secure, reliable, and high performance cloud platform Staroid_.
 
 |
@@ -76,7 +76,6 @@ When you need, fork and get your own version of managed service!
    computing/index
    machine-learning/index
    business-intelligence/index
-   support/index
 
 .. include:: ./ref.rst
 
