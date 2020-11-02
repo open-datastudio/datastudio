@@ -11,13 +11,6 @@ Key features
   - Postgres is pre-configured
   - Connect database on private network using `secure tunnel <https://github.com/staroids/starctl#reverse-tunnel>`__
 
-=============================== ===================================================================
-Launch page                     https://staroid.com/g/open-datastudio/metabase
-Open data studio repository     https://github.com/open-datastudio/metabase
-Original repository             https://github.com/metabase/metabase
-Documentation                   https://www.metabase.com/docs/latest/
-=============================== ===================================================================
-
 .. _metabase.Quickstart:
 
 Metabase Quickstart
@@ -29,6 +22,13 @@ Metabase Quickstart
 **Screenshots**
 
 |metabase-screenshot|
+
+=============================== ===================================================================
+Launch page                     https://staroid.com/g/open-datastudio/metabase
+Open data studio repository     https://github.com/open-datastudio/metabase
+Original repository             https://github.com/metabase/metabase
+Documentation                   https://www.metabase.com/docs/latest/
+=============================== ===================================================================
 
 .. include:: ../ref.rst
 

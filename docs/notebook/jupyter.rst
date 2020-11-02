@@ -2,6 +2,12 @@
 Jupyter
 ==============
 
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/kT1JqzZpBOo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+|
+
 The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text.
 Open data studio makes it easy to deploy on the cloud.
 
@@ -14,13 +20,6 @@ Key features
   - Persistent storage for `~/work`
   - Connect to :ref:`MLflow server`. No configuration required
 
-=============================== ===================================================================
-Launch page                     https://staroid.com/g/open-datastudio/jupyter
-Open data studio repository     https://github.com/open-datastudio/jupyter
-Original repository             https://github.com/jupyter/jupyter
-Documentation                   https://jupyter.readthedocs.io/en/latest/
-=============================== ===================================================================
-
 
 Jupyter Quickstart
 -------------------
@@ -31,6 +30,13 @@ Jupyter Quickstart
 **Screenshots**
 
 |jupyter-screenshot|
+
+=============================== ===================================================================
+Launch page                     https://staroid.com/g/open-datastudio/jupyter
+Open data studio repository     https://github.com/open-datastudio/jupyter
+Original repository             https://github.com/jupyter/jupyter
+Documentation                   https://jupyter.readthedocs.io/en/latest/
+=============================== ===================================================================
 
 .. include:: ../ref.rst
 

@@ -2,6 +2,12 @@
 Superset
 ===============
 
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/vRo036aHaFk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+|
+
 Apache Superset is a modern, enterprise-ready business intelligence web application.
 Open data studio makes it easy to deploy on the cloud.
 
@@ -11,12 +17,6 @@ Key features
   - Postgres and Redis are pre-configured.
   - Connect database on private network using `secure tunnel <https://github.com/staroids/starctl#reverse-tunnel>`__
 
-=============================== ===================================================================
-Launch page                     https://staroid.com/g/open-datastudio/superset
-Open data studio repository     https://github.com/open-datastudio/superset
-Original repository             https://github.com/apache/superset
-Documentation                   https://superset.apache.org/
-=============================== ===================================================================
 
 Superset Quickstart
 -------------------
@@ -27,6 +27,14 @@ Superset Quickstart
 **Screenshots**
 
 |superset-screenshot|
+
+
+=============================== ===================================================================
+Launch page                     https://staroid.com/g/open-datastudio/superset
+Open data studio repository     https://github.com/open-datastudio/superset
+Original repository             https://github.com/apache/superset
+Documentation                   https://superset.apache.org/
+=============================== ===================================================================
 
 .. include:: ../ref.rst
 

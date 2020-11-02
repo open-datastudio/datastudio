@@ -56,6 +56,24 @@ Access to the latest machine learning technology shouldn't be more than a few cl
    # run spark task
    df = spark.read.load("...")
 
+
+.. code-block:: bash
+   :caption: Learn more about :ref:`Ray cluster from Ray Cluster Launcher CLI`
+
+   $ # install ray and staroid package
+   $ pip install ray staroid kubernetes
+
+   $ # switch to nightly build
+   $ ray install-nightly
+
+   $ # get autoscaler yaml files
+   $ git clone https://github.com/ray-project/ray.git
+
+   $ # spin-up cluster on the cloud and attach
+   $ ray up ray/python/ray/autoscaler/staroid/example-full.yaml
+   $ ray attach ray/python/ray/autoscaler/staroid/example-full.yaml
+
+
 |
 
 
@@ -74,6 +92,8 @@ Open source
 Open data studio is an open source project.
 You can easily see source code, understand how it works, and get involved.
 When you need, fork and get your own version of managed service!
+
+Also, every time you launch projects, developers of the projects get funded via StarRank_.
 
 |
 
