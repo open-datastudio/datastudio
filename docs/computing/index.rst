@@ -8,9 +8,9 @@ Large scale, parallel/distributed computing.
    :maxdepth: 1
 
    Spark <spark/index>
+   Ray <ray/index>
 
    Dask (planned) <dask>
-   Ray (planned) <ray>
    Flink (Planned) <flink>
 
 .. include:: ../ref.rst
