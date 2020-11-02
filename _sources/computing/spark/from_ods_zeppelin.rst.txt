@@ -2,7 +2,7 @@
 Spark cluster from Open data studio Zeppelin
 ---------------------------------------------------
 
-Open data studio :ref:`Apache Zeppelin` integrates Spark 3.0 out of the box.
+Open data studio :ref:`Apache Zeppelin` integrates Spark 3.x out of the box.
 Extra installation/initialization steps are not required.
 
 Launch and use spark interpreter. Spark cluster will be automatically created.

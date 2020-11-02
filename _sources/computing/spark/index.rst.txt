@@ -7,7 +7,7 @@ Open data studio provides instant access to the Spark cluster from anywhere with
 
 Key features
 
-  - Spark 3.0.0
+  - Spark 3.x
   - Delta lake support
   - Fully managed
 
@@ -19,17 +19,23 @@ Original repository             https://github.com/apache/spark
 
 |
 
-Getting started
----------------
+|spark-logo|
+
+Getting started Spark cluster
+-----------------------------
 
 .. toctree::
    :maxdepth: 1
 
-   Spark cluster from your Python environment <from_python_environment>
-   Spark cluster from Open data studio Zeppelin <from_ods_zeppelin>
+   Getting Started (Python environment) <from_python_environment>
+   Getting Started (Zeppelin) <from_ods_zeppelin>
 
 |
 |
 
+
+.. |spark-logo| image:: ../../_static/spark-logo.png
+   :width: 150px
+   :alt: Apache spark
 
 .. include:: ../../ref.rst

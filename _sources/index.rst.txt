@@ -11,15 +11,11 @@ Technology
 Use all the latest machine learning technology in a single place.
 Open data studio continues to integrate the best technologies for machine learning.
 
-|spark-logo| |ray-logo| |dask-logo| |delta-logo| |cuda-logo|
+|spark-logo| |ray-logo| |delta-logo| |cuda-logo| |jupyter-logo| |zeppelin-logo|
 
 .. |spark-logo| image:: ./_static/spark-logo.png
    :width: 80px
    :alt: Apache spark
-
-.. |dask-logo| image:: ./_static/dask-logo.png
-   :width: 100px
-   :alt: Dask
 
 .. |ray-logo| image:: ./_static/ray-logo.png
    :width: 100px
@@ -33,6 +29,14 @@ Open data studio continues to integrate the best technologies for machine learni
    :width: 70px
    :alt: Nvidia CUDA
 
+.. |jupyter-logo| image:: ./_static/jupyter-logo.png
+   :width: 60px
+   :alt: Jupyter notebook
+
+.. |zeppelin-logo| image:: ./_static/zeppelin-logo.svg
+   :width: 80px
+   :alt: Zeppelin notebook
+
 |
 
 Easy of use
@@ -41,10 +45,16 @@ Easy of use
 Access to the latest machine learning technology shouldn't be more than a few clicks or a few lines of code away.
 
 .. code-block:: python
-   :caption: Install, configure and spinup spark cluster with 3 remotely running workers
+   :caption: Learn more about :ref:`Spark cluster from your python environment`
 
+   # import open data studio library
    import ods
+
+   # create a spark cluster on the cloud with 3 initial workers
    spark = ods.spark("my-spark", worker_num=3).session()
+
+   # run spark task
+   df = spark.read.load("...")
 
 |
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Spark cluster from your python environment &mdash; Open Data Studio  documentation</title>
+  <title>Ray cluster from Ray Cluster Launcher CLI &mdash; Open Data Studio  documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Spark cluster from Open data studio Zeppelin" href="from_ods_zeppelin.html" />
-    <link rel="prev" title="Spark" href="index.html" /> 
+    <link rel="next" title="Ray cluster from Staroid management console GUI" href="from_staroid_management_console.html" />
+    <link rel="prev" title="Ray" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,15 +90,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../notebook/index.html">Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../data-lake/index.html">Data Lake</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Computing</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Spark</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="index.html#getting-started-spark-cluster">Getting started Spark cluster</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Getting Started (Python environment)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="from_ods_zeppelin.html">Getting Started (Zeppelin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spark/index.html">Spark</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Ray</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#getting-started-ray-cluster">Getting started Ray cluster</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Ray cluster from Ray Cluster Launcher CLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="from_staroid_management_console.html">Ray cluster from Staroid management console GUI</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../ray/index.html">Ray</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dask.html">Dask (planned)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../flink.html">Flink (Planned)</a></li>
 </ul>
@@ -153,16 +153,16 @@
         
           <li><a href="../index.html">Computing</a> &raquo;</li>
         
-          <li><a href="index.html">Spark</a> &raquo;</li>
+          <li><a href="index.html">Ray</a> &raquo;</li>
         
-      <li>Spark cluster from your python environment</li>
+      <li>Ray cluster from Ray Cluster Launcher CLI</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/open-datastudio/datastudio/blob/master/docs/computing/spark/from_python_environment.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/open-datastudio/datastudio/blob/master/docs/computing/ray/from_cluster_launcher.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -176,50 +176,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="spark-cluster-from-your-python-environment">
-<h1>Spark cluster from your python environment<a class="headerlink" href="#spark-cluster-from-your-python-environment" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="install">
-<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install ods
+  <div class="section" id="ray-cluster-from-ray-cluster-launcher-cli">
+<h1>Ray cluster from Ray Cluster Launcher CLI<a class="headerlink" href="#ray-cluster-from-ray-cluster-launcher-cli" title="Permalink to this headline">¶</a></h1>
+<p>Ray master branch includes <a class="reference external" href="https://docs.ray.io/en/master/cluster/cloud.html#staroid">Ray cluster launcher for Staroid</a>.
+This allows creating a ray cluster using standard <code class="docutils literal notranslate"><span class="pre">ray</span> <span class="pre">up</span> <span class="pre">&lt;cluster</span> <span class="pre">configuration</span> <span class="pre">yaml&gt;</span></code> CLI command.</p>
+<p>First, install python dependency packages.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install staroid kubernetes
 </pre></div>
 </div>
-</div>
-<div class="section" id="initialize">
-<h2>Initialize<a class="headerlink" href="#initialize" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
-<span class="n">ods</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<p>Let’s configure staroid access token. <a class="reference external" href="https://staroid.com/settings/accesstokens">Get access token</a> and set
+<code class="docutils literal notranslate"><span class="pre">STAROID_ACCESS_TOKEN</span></code> environment variable.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">STAROID_ACCESS_TOKEN</span><span class="o">=[</span>your access token<span class="o">]</span>
 </pre></div>
 </div>
-<p>See <a class="reference external" href="https://github.com/open-datastudio/ods#quick-start">ods quick start</a> for configuration.</p>
-</div>
-<div class="section" id="spark-quickstart">
-<h2>Spark Quickstart<a class="headerlink" href="#spark-quickstart" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/open-datastudio/spark-serverless/blob/master/notebooks/Spark_serverless_on_Colab.ipynb">Spark serverless on Google Colab</a></p></li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<dl>
-<dt>Create spark session with the default configuration</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
-<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+<p>Then, install latest snapshot version of ray.
+See instructions <a class="reference external" href="https://docs.ray.io/en/latest/installation.html#latest-snapshots-nightlies">https://docs.ray.io/en/latest/installation.html#latest-snapshots-nightlies</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -U <span class="o">[</span>link to wheel<span class="o">]</span>
 </pre></div>
 </div>
-</dd>
-<dt>Create spark session with 3 worker nodes</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
-<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">,</span> <span class="n">worker_num</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+<p>We can get example Ray cluster launcher configuration files for Staroid from Ray source tree.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/ray-project/ray.git
+$ ls ray/python/ray/autoscaler/staroid/example-*.yaml
 </pre></div>
 </div>
-</dd>
-<dt>Create spark session with delta lake</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
-<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+<p>Open example configurations and modify them as you need.
+And then, you can create a Ray cluster using <code class="docutils literal notranslate"><span class="pre">ray</span> <span class="pre">up</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ray up ray/python/ray/autoscaler/staroid/example-full.yaml
 </pre></div>
 </div>
-</dd>
-</dl>
-<p>See <a class="reference external" href="https://github.com/open-datastudio/spark-serverless/blob/master/README.md#how-to-use-staroid">README</a> for more details.</p>
+<p>Once cluster is up and running, you can attach your shell to the Ray head node.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ray attach ray/python/ray/autoscaler/staroid/example-full.yaml
+</pre></div>
+</div>
+<p>To shutdown cluster,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ray down ray/python/ray/autoscaler/staroid/example-full.yaml
+</pre></div>
 </div>
 </div>
 
@@ -231,10 +222,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="from_ods_zeppelin.html" class="btn btn-neutral float-right" title="Spark cluster from Open data studio Zeppelin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="from_staroid_management_console.html" class="btn btn-neutral float-right" title="Ray cluster from Staroid management console GUI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Spark" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Ray" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

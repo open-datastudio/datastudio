@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Dask" href="../dask.html" />
+    <link rel="next" title="Ray" href="../ray/index.html" />
     <link rel="prev" title="Spark cluster from your python environment" href="from_python_environment.html" /> 
 </head>
 
@@ -91,15 +91,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../data-lake/index.html">Data Lake</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Computing</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Spark</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="index.html#getting-started">Getting started</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="from_python_environment.html">Spark cluster from your Python environment</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Spark cluster from Open data studio Zeppelin</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#getting-started-spark-cluster">Getting started Spark cluster</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="from_python_environment.html">Getting Started (Python environment)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Getting Started (Zeppelin)</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../ray/index.html">Ray</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dask.html">Dask (planned)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ray.html">Ray (planned)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../flink.html">Flink (Planned)</a></li>
 </ul>
 </li>
@@ -178,7 +178,7 @@
             
   <div class="section" id="spark-cluster-from-open-data-studio-zeppelin">
 <h1>Spark cluster from Open data studio Zeppelin<a class="headerlink" href="#spark-cluster-from-open-data-studio-zeppelin" title="Permalink to this headline">¶</a></h1>
-<p>Open data studio <a class="reference internal" href="../../notebook/zeppelin.html#apache-zeppelin"><span class="std std-ref">Apache Zeppelin</span></a> integrates Spark 3.0 out of the box.
+<p>Open data studio <a class="reference internal" href="../../notebook/zeppelin.html#apache-zeppelin"><span class="std std-ref">Apache Zeppelin</span></a> integrates Spark 3.x out of the box.
 Extra installation/initialization steps are not required.</p>
 <p>Launch and use spark interpreter. Spark cluster will be automatically created.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
@@ -207,7 +207,7 @@ spark.executor.instances <span class="m">3</span>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dask.html" class="btn btn-neutral float-right" title="Dask" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../ray/index.html" class="btn btn-neutral float-right" title="Ray" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="from_python_environment.html" class="btn btn-neutral float-left" title="Spark cluster from your python environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -254,6 +254,27 @@ spark.executor.instances <span class="m">3</span>
     
   
  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-71HJN1HDW2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-71HJN1HDW2');
+</script>
+
+<!-- Hotjar Tracking Code for https://open-datastudio.io -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2074110,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
 
 
 </body>
