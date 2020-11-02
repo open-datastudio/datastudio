@@ -178,19 +178,29 @@
             
   <div class="section" id="spark-cluster-from-your-python-environment">
 <h1>Spark cluster from your python environment<a class="headerlink" href="#spark-cluster-from-your-python-environment" title="Permalink to this headline">¶</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J43qKJnp_N8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="section" id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install ods
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install ods
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">ods</span></code> package uses <a class="reference external" href="https://github.com/staroids/staroid-python">staroid python library</a>.
+<a class="reference external" href="https://staroid.com/settings/accesstokens">Get access token</a> and set <code class="docutils literal notranslate"><span class="pre">STAROID_ACCESS_TOKEN</span></code> environment variable to configure it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">STAROID_ACCESS_TOKEN</span><span class="o">=</span><span class="s2">&quot;&lt;your access token&gt;&quot;</span>
+</pre></div>
+</div>
+<p>You can find alternative way to configure Staroid package. <a class="reference external" href="https://github.com/staroids/staroid-python#configuration">Learn more</a>.</p>
 </div>
 <div class="section" id="initialize">
 <h2>Initialize<a class="headerlink" href="#initialize" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
-<span class="n">ods</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="c1"># &#39;ske&#39; is the name of kubernetes cluster created from staroid.com.</span>
+<span class="c1"># Alternatively, you can set the &#39;STAROID_SKE&#39; environment variable.</span>
+<span class="n">ods</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">ske</span><span class="o">=</span><span class="s2">&quot;kube-cluster-1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>See <a class="reference external" href="https://github.com/open-datastudio/ods#quick-start">ods quick start</a> for configuration.</p>
 </div>
 <div class="section" id="spark-quickstart">
 <h2>Spark Quickstart<a class="headerlink" href="#spark-quickstart" title="Permalink to this headline">¶</a></h2>

@@ -12,13 +12,9 @@ Key features
   - Ray Dashboard link to the cluster
   - GPU workers
 
-
-=============================== ===================================================================
-Open data studio Ray            https://github.com/open-datastudio/ray
-Original repository             https://github.com/ray-project/ray
-=============================== ===================================================================
-
 |
+
+|ray-logo|
 
 Getting started Ray cluster
 ---------------------------
@@ -31,5 +27,15 @@ Getting started Ray cluster
 
 |
 |
+
+=============================== ===================================================================
+Open data studio Ray            https://github.com/open-datastudio/ray
+Original repository             https://github.com/ray-project/ray
+=============================== ===================================================================
+
+
+.. |ray-logo| image:: ../../_static/ray-logo.png
+   :width: 150px
+   :alt: Ray
 
 .. include:: ../../ref.rst

@@ -168,7 +168,7 @@
 <h2>Technology<a class="headerlink" href="#technology" title="Permalink to this headline">¶</a></h2>
 <p>Use all the latest machine learning technology in a single place.
 Open data studio continues to integrate the best technologies for machine learning.</p>
-<p><a class="reference internal" href="_images/spark-logo1.png"><img alt="Apache spark" src="_images/spark-logo1.png" style="width: 80px;" /></a> <a class="reference internal" href="_images/ray-logo.png"><img alt="Ray" src="_images/ray-logo.png" style="width: 100px;" /></a> <a class="reference internal" href="_images/delta-logo.png"><img alt="Delta lake" src="_images/delta-logo.png" style="width: 70px;" /></a> <a class="reference internal" href="_images/cuda-logo.png"><img alt="Nvidia CUDA" src="_images/cuda-logo.png" style="width: 70px;" /></a> <a class="reference internal" href="_images/jupyter-logo.png"><img alt="Jupyter notebook" src="_images/jupyter-logo.png" style="width: 60px;" /></a> <a class="reference internal" href="_images/zeppelin-logo.svg"><img alt="Zeppelin notebook" src="_images/zeppelin-logo.svg" width="80px" /></a></p>
+<p><a class="reference internal" href="_images/spark-logo1.png"><img alt="Apache spark" src="_images/spark-logo1.png" style="width: 80px;" /></a> <a class="reference internal" href="_images/ray-logo1.png"><img alt="Ray" src="_images/ray-logo1.png" style="width: 100px;" /></a> <a class="reference internal" href="_images/delta-logo.png"><img alt="Delta lake" src="_images/delta-logo.png" style="width: 70px;" /></a> <a class="reference internal" href="_images/cuda-logo.png"><img alt="Nvidia CUDA" src="_images/cuda-logo.png" style="width: 70px;" /></a> <a class="reference internal" href="_images/jupyter-logo.png"><img alt="Jupyter notebook" src="_images/jupyter-logo.png" style="width: 60px;" /></a> <a class="reference internal" href="_images/zeppelin-logo.svg"><img alt="Zeppelin notebook" src="_images/zeppelin-logo.svg" width="80px" /></a></p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -186,6 +186,23 @@ Open data studio continues to integrate the best technologies for machine learni
 
 <span class="c1"># run spark task</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Learn more about <a class="reference internal" href="computing/ray/from_cluster_launcher.html#ray-cluster-from-ray-cluster-launcher-cli"><span class="std std-ref">Ray cluster from Ray Cluster Launcher CLI</span></a></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="c1"># install ray and staroid package</span>
+$ pip install ray staroid kubernetes
+
+$ <span class="c1"># switch to nightly build</span>
+$ ray install-nightly
+
+$ <span class="c1"># get autoscaler yaml files</span>
+$ git clone https://github.com/ray-project/ray.git
+
+$ <span class="c1"># spin-up cluster on the cloud and attach</span>
+$ ray up ray/python/ray/autoscaler/staroid/example-full.yaml
+$ ray attach ray/python/ray/autoscaler/staroid/example-full.yaml
 </pre></div>
 </div>
 </div>
@@ -207,6 +224,7 @@ on top of secure, reliable, and high performance cloud platform <a class="refere
 <p>Open data studio is an open source project.
 You can easily see source code, understand how it works, and get involved.
 When you need, fork and get your own version of managed service!</p>
+<p>Also, every time you launch projects, developers of the projects get funded via <a class="reference external" href="https://staroid.com/site/starrank">StarRank</a>.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>

@@ -10,12 +10,7 @@ Key features
   - Spark 3.x
   - Delta lake support
   - Fully managed
-
-=============================== ===================================================================
-Open data studio container      https://github.com/open-datastudio/spark
-Open data studio spark service  https://github.com/open-datastudio/spark-serverless
-Original repository             https://github.com/apache/spark
-=============================== ===================================================================
+  - Spark UI access
 
 |
 
@@ -33,6 +28,11 @@ Getting started Spark cluster
 |
 |
 
+=============================== ===================================================================
+Open data studio container      https://github.com/open-datastudio/spark
+Open data studio spark service  https://github.com/open-datastudio/spark-serverless
+Original repository             https://github.com/apache/spark
+=============================== ===================================================================
 
 .. |spark-logo| image:: ../../_static/spark-logo.png
    :width: 150px
