@@ -9,21 +9,28 @@ First, install python dependency packages.
 
 .. code-block:: bash
 
-   $ pip install staroid kubernetes
+   $ pip install ray staroid kubernetes
 
-Let's configure staroid access token. `Get access token <https://staroid.com/settings/accesstokens>`_ and set
+Since Staroid cloud provider is available from Ray 1.1.0, let's install 1.1.0 snapshot.
+
+.. code-block:: bash
+
+   $ ray install nightly
+
+or
+
+.. code-block:: bash
+
+   $ pip install -U [link to wheel]
+
+See instructions https://docs.ray.io/en/latest/installation.html#latest-snapshots-nightlies.
+
+Then, let's configure staroid access token. `Get access token <https://staroid.com/settings/accesstokens>`_ and set
 ``STAROID_ACCESS_TOKEN`` environment variable.
 
 .. code-block:: bash
 
    $ export STAROID_ACCESS_TOKEN=[your access token]
-
-Then, install latest snapshot version of ray.
-See instructions https://docs.ray.io/en/latest/installation.html#latest-snapshots-nightlies.
-
-.. code-block:: bash
-
-   $ pip install -U [link to wheel]
 
 We can get example Ray cluster launcher configuration files for Staroid from Ray source tree.
 
