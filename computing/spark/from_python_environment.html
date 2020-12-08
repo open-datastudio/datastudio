@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Spark cluster from Open data studio Zeppelin" href="from_ods_zeppelin.html" />
-    <link rel="prev" title="Spark" href="index.html" /> 
+    <link rel="next" title="Access Spark UI" href="spark_ui.html" />
+    <link rel="prev" title="Spark serverless" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,15 +90,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../notebook/index.html">Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../data-lake/index.html">Data Lake</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Computing</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Spark</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="index.html#getting-started-spark-cluster">Getting started Spark cluster</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Spark serverless</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#spark-serverless-cluster">Spark serverless cluster</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Getting Started (Python environment)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="from_ods_zeppelin.html">Getting Started (Zeppelin)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spark_ui.html">Access Spark UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="instances.html">Managing cluster instances</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../ray/index.html">Ray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ray/index.html">Ray cluster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dask.html">Dask (planned)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../flink.html">Flink (Planned)</a></li>
 </ul>
@@ -153,7 +154,7 @@
         
           <li><a href="../index.html">Computing</a> &raquo;</li>
         
-          <li><a href="index.html">Spark</a> &raquo;</li>
+          <li><a href="index.html">Spark serverless</a> &raquo;</li>
         
       <li>Spark cluster from your python environment</li>
     
@@ -183,53 +184,48 @@
 </div>
 <div class="section" id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<p>Install <a class="reference external" href="https://github.com/open-datastudio/ods">ods</a> package using pip command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install ods
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">ods</span></code> package uses <a class="reference external" href="https://github.com/staroids/staroid-python">staroid python library</a>.
-<a class="reference external" href="https://staroid.com/settings/accesstokens">Get access token</a> and set <code class="docutils literal notranslate"><span class="pre">STAROID_ACCESS_TOKEN</span></code> environment variable to configure it.</p>
+<p>And let’s get an <a class="reference external" href="https://staroid.com/settings/accesstokens">access token</a> and set <code class="docutils literal notranslate"><span class="pre">STAROID_ACCESS_TOKEN</span></code> environment variable.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">STAROID_ACCESS_TOKEN</span><span class="o">=</span><span class="s2">&quot;&lt;your access token&gt;&quot;</span>
 </pre></div>
 </div>
-<p>You can find alternative way to configure Staroid package. <a class="reference external" href="https://github.com/staroids/staroid-python#configuration">Learn more</a>.</p>
+<p>For alternative ways to configure access token, check <a class="reference external" href="https://github.com/staroids/staroid-python#configuration">staroid-python</a>.</p>
 </div>
-<div class="section" id="initialize">
-<h2>Initialize<a class="headerlink" href="#initialize" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-kubernetes-cluster">
+<h2>Create Kubernetes cluster<a class="headerlink" href="#create-kubernetes-cluster" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://staroid.com">staroid.com</a>  -&gt; Products -&gt; Kubernetes (SKE) -&gt; New Kubernetes cluster.</p>
+<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/1540981/87723637-ede8ac00-c76e-11ea-98d3-b6f8d972453d.png"><img alt="https://user-images.githubusercontent.com/1540981/87723637-ede8ac00-c76e-11ea-98d3-b6f8d972453d.png" src="https://user-images.githubusercontent.com/1540981/87723637-ede8ac00-c76e-11ea-98d3-b6f8d972453d.png" style="width: 400px;" /></a>
+<p>And configure kubernetes cluster name after import python library.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
 <span class="c1"># &#39;ske&#39; is the name of kubernetes cluster created from staroid.com.</span>
 <span class="c1"># Alternatively, you can set the &#39;STAROID_SKE&#39; environment variable.</span>
-<span class="n">ods</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">ske</span><span class="o">=</span><span class="s2">&quot;kube-cluster-1&quot;</span><span class="p">)</span>
+<span class="n">ods</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">ske</span><span class="o">=</span><span class="s2">&quot;data-team1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="spark-quickstart">
-<h2>Spark Quickstart<a class="headerlink" href="#spark-quickstart" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/open-datastudio/spark-serverless/blob/master/notebooks/Spark_serverless_on_Colab.ipynb">Spark serverless on Google Colab</a></p></li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<dl>
-<dt>Create spark session with the default configuration</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
-<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+<div class="section" id="create-pyspark-session">
+<h2>Create PySpark session<a class="headerlink" href="#create-pyspark-session" title="Permalink to this headline">¶</a></h2>
+<p>Spark-serverless enables you to create an interactive PySpark sessions with executors running on the cloud remotely.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
+<span class="c1"># &#39;ske&#39; is the name of kubernetes cluster created from staroid.com.</span>
+<span class="c1"># Alternatively, you can set the &#39;STAROID_SKE&#39; environment variable.</span>
+<span class="n">ods</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">ske</span><span class="o">=</span><span class="s2">&quot;data-team1&quot;</span><span class="p">)</span>
+
+<span class="c1"># get saprk session with 3 initial worker nodes, delta lake enabled</span>
+<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">,</span> <span class="n">worker_num</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+
+<span class="c1"># Do your work with Spark session</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd>
-<dt>Create spark session with 3 worker nodes</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
-<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">,</span> <span class="n">worker_num</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
-</pre></div>
+<p>Now you can use Spark session with 3 remotely running executors.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There’s no application packaging and submit step required. Everything runs interactively.</p>
 </div>
-</dd>
-<dt>Create spark session with delta lake</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
-<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-<p>See <a class="reference external" href="https://github.com/open-datastudio/spark-serverless/blob/master/README.md#how-to-use-staroid">README</a> for more details.</p>
 </div>
 </div>
 
@@ -241,10 +237,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="from_ods_zeppelin.html" class="btn btn-neutral float-right" title="Spark cluster from Open data studio Zeppelin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="spark_ui.html" class="btn btn-neutral float-right" title="Access Spark UI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Spark" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Spark serverless" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

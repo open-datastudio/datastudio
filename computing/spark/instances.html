@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Managing cluster instances &mdash; Open Data Studio  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Ray cluster" href="../ray/index.html" />
+    <link rel="prev" title="Access Spark UI" href="spark_ui.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Open Data Studio
+          
+
+          
+            
+            <img src="../../_static/open-datastudio-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebook/index.html">Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data-lake/index.html">Data Lake</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Computing</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Spark serverless</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#spark-serverless-cluster">Spark serverless cluster</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="from_python_environment.html">Getting Started (Python environment)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spark_ui.html">Access Spark UI</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Managing cluster instances</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ray/index.html">Ray cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dask.html">Dask (planned)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../flink.html">Flink (Planned)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine-learning/index.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../business-intelligence/index.html">Business Intelligence</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Open Data Studio</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Computing</a> &raquo;</li>
+        
+          <li><a href="index.html">Spark serverless</a> &raquo;</li>
+        
+      <li>Managing cluster instances</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/open-datastudio/datastudio/blob/master/docs/computing/spark/instances.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managing-cluster-instances">
+<h1>Managing cluster instances<a class="headerlink" href="#managing-cluster-instances" title="Permalink to this headline">¶</a></h1>
+<p>Spark serverless doesn’t really need complex management or maintenance of the Spark cluster.
+Upgrading, scaling-out, optimization, and other complex tasks are handled automatically.
+Enjoy <strong>zero maintenance</strong> serverless experience.</p>
+<p>All you need to do is simple task, such as Start or Stop cluster instances when you need.</p>
+<p>Cluster instance management operations can be done
+either programmatically using Python client library or with mouse clicks from <a class="reference external" href="https://staroid.com/g/open-datastudio/spark-serverless/instances">Instance management menu</a>.</p>
+<div class="section" id="create-a-new-spark-cluster-instance">
+<h2>Create a new Spark cluster instance<a class="headerlink" href="#create-a-new-spark-cluster-instance" title="Permalink to this headline">¶</a></h2>
+<p>You can create multiple Spark serverless cluster instances in
+one or more Kubernetes cluster (SKE). See <a class="reference internal" href="from_python_environment.html#create-kubernetes-cluster"><span class="std std-ref">Create Kubernetes cluster</span></a> section to create a SKE.</p>
+<p>You can create a cluster instance by creating a spark session from your Python environment.</p>
+<dl>
+<dt>Create spark session with the default configuration</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
+<span class="n">ods</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">ske</span><span class="o">=</span><span class="s2">&quot;my-ske&quot;</span><span class="p">)</span>
+<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+<dt>Create spark session with 3 initial worker nodes</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
+<span class="n">ods</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">ske</span><span class="o">=</span><span class="s2">&quot;my-ske&quot;</span><span class="p">)</span>
+<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">,</span> <span class="n">worker_num</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+<dt>Create spark session with delta lake support</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ods</span>
+<span class="n">ods</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">ske</span><span class="o">=</span><span class="s2">&quot;my-ske&quot;</span><span class="p">)</span>
+<span class="n">spark</span> <span class="o">=</span> <span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ods</span></code> to install ods library.
+Python version 3.6, 3.7, 3.8 are supported.</p>
+</div>
+<p>Done! You have Spark session that is connected to executors running remotely on the cloud.
+No application packaging and job submit to the cluster required.</p>
+<p>Your Spark session is capable of doing interactive computing.
+That means, you can use Spark session in Python REPL or in the Notebook.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It may take a few seconds to minutes for executors to be fully ready. See next section to monitor status of executors.</p>
+</div>
+</div>
+<div class="section" id="spark-cluster-instance-management-menu">
+<h2>Spark cluster instance management menu<a class="headerlink" href="#spark-cluster-instance-management-menu" title="Permalink to this headline">¶</a></h2>
+<p>Open <a class="reference external" href="https://staroid.com/g/open-datastudio/spark-serverless/instances">Instance management menu</a>
+and you’ll find Spark cluster instance automatically created by the Spark session.
+You can also access <a class="reference internal" href="spark_ui.html#access-spark-ui"><span class="std std-ref">Access Spark UI</span></a> from here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Log console and shell terminal is provided for more advanced usage as well.</p>
+</div>
+</div>
+<div class="section" id="stop-spark-cluster-instance">
+<h2>Stop Spark cluster instance<a class="headerlink" href="#stop-spark-cluster-instance" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference external" href="https://staroid.com/g/open-datastudio/spark-serverless/instances">Instance management menu</a> menu,
+You can find <code class="docutils literal notranslate"><span class="pre">Stop</span></code> (<code class="docutils literal notranslate"><span class="pre">Start</span></code>) and <code class="docutils literal notranslate"><span class="pre">Terminate</span></code> button.</p>
+<dl>
+<dt>Stop</dt><dd><p>Stop all executors. Can be (re)started later. Data stored in persistent volume is not removed.</p>
+<p>Python API equivalent is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;spark&#39; is spark session created from &#39;spark = ods.spark(&quot;my-cluster&quot;).session()&#39;</span>
+<span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+<dt>Terminate</dt><dd><p>Stop all executors permanently. Can not be restarted. Data stored in persistent volume is also removed.</p>
+<p>Python API equivalent is</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ods</span><span class="o">.</span><span class="n">spark</span><span class="p">(</span><span class="s2">&quot;my-cluster&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ray/index.html" class="btn btn-neutral float-right" title="Ray cluster" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="spark_ui.html" class="btn btn-neutral float-left" title="Access Spark UI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright Open Data Studio Authors
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-71HJN1HDW2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-71HJN1HDW2');
+</script>
+
+<!-- Hotjar Tracking Code for https://open-datastudio.io -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2074110,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+</body>
+</html>

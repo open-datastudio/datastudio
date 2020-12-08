@@ -160,9 +160,34 @@
             
   <div class="section" id="ods-logo-open-data-studio">
 <h1><a class="reference internal" href="_images/open-datastudio-logo.png"><img alt="Open Datastudio" src="_images/open-datastudio-logo.png" style="width: 60px;" /></a> Open Data Studio<a class="headerlink" href="#ods-logo-open-data-studio" title="Permalink to this headline">¶</a></h1>
-<p>Open data studio is a managed computing service on <a class="reference external" href="https://staroid.com">Staroid</a> cloud. Run your machine learning workloads without managing clusters and servers.</p>
+<p>Open data studio is a fully managed computing service on <a class="reference external" href="https://staroid.com">Staroid</a> cloud,
+built with open source development model.</p>
+<p>That means you can enjoy all the benefits of software as a service,
+without giving up ability to understand the code, contribute and improve like any other open source software.</p>
 <div class="line-block">
 <div class="line"><br /></div>
+</div>
+<div class="section" id="use-cases">
+<h2>Use cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><a class="reference internal" href="_images/spark-usecase.png"><img alt="Spark use case" src="_images/spark-usecase.png" style="width: 650px;" /></a></p>
+<ul class="simple">
+<li><p>From Python shell/ide/notebook on your laptop, interactively process massive data on your data lake with <a class="reference internal" href="computing/spark/index.html#spark-serverless"><span class="std std-ref">Spark serverless</span></a>.</p></li>
+<li><p>Connect your BI tools via JDBC using <a class="reference internal" href="data-lake/spark-thriftserver.html#spark-thriftserver"><span class="std std-ref">Spark thriftserver</span></a>. On-demand Spark cluster is automatically configured for you.</p></li>
+<li><p>Visualize your data on interactive notebook using <a class="reference internal" href="notebook/zeppelin.html#apache-zeppelin"><span class="std std-ref">Apache Zeppelin</span></a>. On-demand Spark cluster is automatically configured for you.</p></li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p><a class="reference internal" href="_images/ray-usecase.png"><img alt="Ray use case" src="_images/ray-usecase.png" style="width: 500px;" /></a></p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">ray</span> <span class="pre">up</span></code> command to launch fully managed <a class="reference internal" href="computing/ray/index.html#ray-cluster"><span class="std std-ref">Ray cluster</span></a> on the cloud.</p></li>
+<li><p>Deploy your model using Ray serve with authenticated REST API endpoint.</p></li>
+<li><p>Launch GPU accelerated <a class="reference internal" href="notebook/jupyter.html#jupyter"><span class="std std-ref">Jupyter</span></a> instance on the cloud.</p></li>
+</ul>
+</div></blockquote>
 </div>
 <div class="section" id="technology">
 <h2>Technology<a class="headerlink" href="#technology" title="Permalink to this headline">¶</a></h2>
@@ -246,8 +271,8 @@ When you need, fork and get your own version of managed service!</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="computing/index.html">Computing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="computing/spark/index.html">Spark</a></li>
-<li class="toctree-l2"><a class="reference internal" href="computing/ray/index.html">Ray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computing/spark/index.html">Spark serverless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computing/ray/index.html">Ray cluster</a></li>
 <li class="toctree-l2"><a class="reference internal" href="computing/dask.html">Dask (planned)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="computing/flink.html">Flink (Planned)</a></li>
 </ul>

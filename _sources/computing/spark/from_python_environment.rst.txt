@@ -11,59 +11,61 @@ Spark cluster from your python environment
 Install
 --------------------------
 
+Install `ods <https://github.com/open-datastudio/ods>`_ package using pip command.
+
 .. code-block:: bash
 
    $ pip install ods
 
-``ods`` package uses `staroid python library <https://github.com/staroids/staroid-python>`_.
-`Get access token <https://staroid.com/settings/accesstokens>`_ and set ``STAROID_ACCESS_TOKEN`` environment variable to configure it.
+And let's get an `access token <https://staroid.com/settings/accesstokens>`_ and set ``STAROID_ACCESS_TOKEN`` environment variable.
 
 .. code-block:: bash
 
    $ export STAROID_ACCESS_TOKEN="<your access token>"
 
-You can find alternative way to configure Staroid package. `Learn more <https://github.com/staroids/staroid-python#configuration>`_.
+For alternative ways to configure access token, check `staroid-python <https://github.com/staroids/staroid-python#configuration>`_.
 
-Initialize
+Create Kubernetes cluster
 --------------------------
+
+`staroid.com <https://staroid.com>`_  -> Products -> Kubernetes (SKE) -> New Kubernetes cluster.
+
+.. image:: https://user-images.githubusercontent.com/1540981/87723637-ede8ac00-c76e-11ea-98d3-b6f8d972453d.png
+   :width: 400
+
+And configure kubernetes cluster name after import python library.
 
 .. code-block:: python
 
    import ods
    # 'ske' is the name of kubernetes cluster created from staroid.com.
    # Alternatively, you can set the 'STAROID_SKE' environment variable.
-   ods.init(ske="kube-cluster-1")
+   ods.init(ske="data-team1")
 
 
-Spark Quickstart
----------------------------
+Create PySpark session
+-----------------------
 
- - `Spark serverless on Google Colab <https://colab.research.google.com/github/open-datastudio/spark-serverless/blob/master/notebooks/Spark_serverless_on_Colab.ipynb>`_
+Spark-serverless enables you to create an interactive PySpark sessions with executors running on the cloud remotely.
 
-Usage
------
+.. code-block:: python
 
-Create spark session with the default configuration
-    .. code-block:: python
+   import ods
+   # 'ske' is the name of kubernetes cluster created from staroid.com.
+   # Alternatively, you can set the 'STAROID_SKE' environment variable.
+   ods.init(ske="data-team1")
 
-       import ods
-       spark = ods.spark("my-cluster").session()
+   # get saprk session with 3 initial worker nodes, delta lake enabled
+   spark = ods.spark("my-cluster", worker_num=3, delta=True).session()
 
-Create spark session with 3 worker nodes
-    .. code-block:: python
+   # Do your work with Spark session
+   df = spark.read.load(...)
 
-       import ods
-       spark = ods.spark("my-cluster", worker_num=3).session()
+Now you can use Spark session with 3 remotely running executors.
 
-Create spark session with delta lake
-    .. code-block:: python
+.. note::
 
-       import ods
-       spark = ods.spark("my-cluster", delta=True).session()
-
-
-
-See `README <https://github.com/open-datastudio/spark-serverless/blob/master/README.md#how-to-use-staroid>`_ for more details.
+     There's no application packaging and submit step required. Everything runs interactively.
 
 
 .. include:: ../../ref.rst

@@ -90,8 +90,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../notebook/index.html">Notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../data-lake/index.html">Data Lake</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Computing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../spark/index.html">Spark</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Ray</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../spark/index.html">Spark serverless</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Ray cluster</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html#getting-started-ray-cluster">Getting started Ray cluster</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="from_cluster_launcher.html">Ray cluster from Ray Cluster Launcher CLI</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Ray cluster from Staroid management console GUI</a></li>
@@ -153,7 +153,7 @@
         
           <li><a href="../index.html">Computing</a> &raquo;</li>
         
-          <li><a href="index.html">Ray</a> &raquo;</li>
+          <li><a href="index.html">Ray cluster</a> &raquo;</li>
         
       <li>Ray cluster from Staroid management console GUI</li>
     
@@ -178,6 +178,43 @@
             
   <div class="section" id="ray-cluster-from-staroid-management-console-gui">
 <h1>Ray cluster from Staroid management console GUI<a class="headerlink" href="#ray-cluster-from-staroid-management-console-gui" title="Permalink to this headline">¶</a></h1>
+<p>Ray cluster can be managed from <a class="reference external" href="https://staroid.com/g/open-datastudio/ray-cluster/instances">Instance management menu</a>
+without using Ray CLI (Command Line Interface).</p>
+<div class="section" id="start-a-ray-cluster-from-gui">
+<h2>Start a Ray cluster from GUI<a class="headerlink" href="#start-a-ray-cluster-from-gui" title="Permalink to this headline">¶</a></h2>
+<p>Click <code class="docutils literal notranslate"><span class="pre">Launch</span></code> button from <a class="reference external" href="https://staroid.com/g/open-datastudio/ray-cluster/instances">Instance management menu</a>.</p>
+<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/1540981/101434974-65ef7400-38c0-11eb-8647-22a4a11ca2e1.png"><img alt="Ray cluster launch dialog" src="https://user-images.githubusercontent.com/1540981/101434974-65ef7400-38c0-11eb-8647-22a4a11ca2e1.png" style="width: 500px;" /></a>
+<p>In a launch dialog, you can configure a name of your Ray cluster instance, number of max workers and so on.
+Once launched, you can see status of your Ray cluster instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ray cluster takes few seconds to a couple of minutes to fully initialized.
+During initialization, it performs node provisioning, downloading Ray container image and executing bootstrap commands.</p>
+</div>
+</div>
+<div class="section" id="access-ray-dashboard-and-jupyter-notebook">
+<h2>Access Ray dashboard and Jupyter notebook<a class="headerlink" href="#access-ray-dashboard-and-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<p>Once your Ray cluster instance is fully initialized,
+you’ll see link to the Ray dashbaord and Jupyter notebook.</p>
+<a class="reference internal image-reference" href="https://user-images.githubusercontent.com/1540981/101435650-8f5ccf80-38c1-11eb-8619-ea448c33a50e.png"><img alt="https://user-images.githubusercontent.com/1540981/101435650-8f5ccf80-38c1-11eb-8619-ea448c33a50e.png" src="https://user-images.githubusercontent.com/1540981/101435650-8f5ccf80-38c1-11eb-8619-ea448c33a50e.png" style="width: 600px;" /></a>
+<p>In the Jupyter notebook, ray environment is pre-configured so you can just run</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ray</span>
+<span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>  <span class="c1"># no &#39;address&#39; parameter required :)</span>
+</pre></div>
+</div>
+<p>and use Ray cluster environment.</p>
+</div>
+<div class="section" id="stop-ray-cluster-instance">
+<h2>Stop Ray cluster instance<a class="headerlink" href="#stop-ray-cluster-instance" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference external" href="https://staroid.com/g/open-datastudio/ray-cluster/instances">Instance management menu</a> menu,
+You can find <code class="docutils literal notranslate"><span class="pre">Stop</span></code> (<code class="docutils literal notranslate"><span class="pre">Start</span></code>) and <code class="docutils literal notranslate"><span class="pre">Terminate</span></code> button.</p>
+<dl class="simple">
+<dt>Stop</dt><dd><p>Stop Ray head and all workers. Can be (re)started later. Data stored in persistent volume is not removed.</p>
+</dd>
+<dt>Terminate</dt><dd><p>Stop Ray head and all workers permanently. Can not be restarted. Data stored in persistent volume is also removed.</p>
+</dd>
+</dl>
+</div>
 </div>
 
 
