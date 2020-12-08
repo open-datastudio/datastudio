@@ -5,6 +5,9 @@ Ray cluster from Ray Cluster Launcher CLI
 Ray master branch includes `Ray cluster launcher for Staroid <https://docs.ray.io/en/master/cluster/cloud.html#staroid>`_.
 This allows creating a ray cluster using standard ``ray up <cluster configuration yaml>`` CLI command.
 
+Install Ray and dependency libraries
+------------------------------------
+
 First, install python dependency packages.
 
 .. code-block:: bash
@@ -15,7 +18,7 @@ Since Staroid cloud provider is available from Ray 1.1.0, let's install 1.1.0 sn
 
 .. code-block:: bash
 
-   $ ray install nightly
+   $ ray install-nightly
 
 or
 
@@ -25,12 +28,18 @@ or
 
 See instructions https://docs.ray.io/en/latest/installation.html#latest-snapshots-nightlies.
 
+Configure Staroid access token
+------------------------------
+
 Then, let's configure staroid access token. `Get access token <https://staroid.com/settings/accesstokens>`_ and set
 ``STAROID_ACCESS_TOKEN`` environment variable.
 
 .. code-block:: bash
 
    $ export STAROID_ACCESS_TOKEN=[your access token]
+
+Cluster configuration file
+--------------------------
 
 We can get example Ray cluster launcher configuration files for Staroid from Ray source tree.
 
@@ -40,7 +49,11 @@ We can get example Ray cluster launcher configuration files for Staroid from Ray
    $ ls ray/python/ray/autoscaler/staroid/example-*.yaml
 
 Open example configurations and modify them as you need.
-And then, you can create a Ray cluster using ``ray up`` command.
+
+Start a Ray cluster
+-------------------
+
+Now, you can create a Ray cluster using ``ray up`` command.
 
 .. code-block:: bash
 
@@ -51,6 +64,21 @@ Once cluster is up and running, you can attach your shell to the Ray head node.
 .. code-block:: bash
 
    $ ray attach ray/python/ray/autoscaler/staroid/example-full.yaml
+
+Ray instance management menu
+----------------------------
+
+Check `Instance management menu <https://staroid.com/g/open-datastudio/ray-cluster/instances>`_.
+You'll see your Ray cluster instances.
+
+.. image:: https://user-images.githubusercontent.com/1540981/101430734-71d83780-38ba-11eb-94d4-f7b20f0135ae.png
+   :width: 600
+
+You'll find link to Ray dashbord and Jupyter notebook.
+
+
+Shutdown Ray cluster
+--------------------
 
 To shutdown cluster,
 

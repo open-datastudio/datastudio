@@ -1,5 +1,5 @@
 ================
-Spark
+Spark serverless
 ================
 
 Apache Spark is a unified analytics engine for large-scale data processing.
@@ -16,20 +16,19 @@ Key features
 
 |spark-logo|
 
-Getting started Spark cluster
+Spark serverless cluster
 -----------------------------
 
 .. toctree::
    :maxdepth: 1
 
    Getting Started (Python environment) <from_python_environment>
-   Getting Started (Zeppelin) <from_ods_zeppelin>
+   Access Spark UI <spark_ui>
+   Managing cluster instances <instances>
 
-|
 |
 
 =============================== ===================================================================
-Open data studio container      https://github.com/open-datastudio/spark
 Open data studio spark service  https://github.com/open-datastudio/spark-serverless
 Original repository             https://github.com/apache/spark
 =============================== ===================================================================

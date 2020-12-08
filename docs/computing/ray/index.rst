@@ -1,6 +1,9 @@
 ==============
-Ray
+Ray cluster
 ==============
+
+.. image:: https://staroid.com/api/run/button.svg
+   :target: https://staroid.com/g/open-datastudio/ray-cluster
 
 Ray is a distributed execution framework that makes it easy to scale your applications and to leverage state of the art machine learning libraries.
 
@@ -29,7 +32,7 @@ Getting started Ray cluster
 |
 
 =============================== ===================================================================
-Open data studio Ray            https://github.com/open-datastudio/ray
+Open data studio Ray Cluster    https://github.com/open-datastudio/ray-cluster
 Original repository             https://github.com/ray-project/ray
 =============================== ===================================================================
 
