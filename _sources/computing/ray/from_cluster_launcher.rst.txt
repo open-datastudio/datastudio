@@ -8,25 +8,11 @@ This allows creating a ray cluster using standard ``ray up <cluster configuratio
 Install Ray and dependency libraries
 ------------------------------------
 
-First, install python dependency packages.
+First, install ray (1.1.0 or newer) and python dependency packages.
 
 .. code-block:: bash
 
    $ pip install ray staroid kubernetes
-
-Since Staroid cloud provider is available from Ray 1.1.0, let's install 1.1.0 snapshot.
-
-.. code-block:: bash
-
-   $ ray install-nightly
-
-or
-
-.. code-block:: bash
-
-   $ pip install -U [link to wheel]
-
-See instructions https://docs.ray.io/en/latest/installation.html#latest-snapshots-nightlies.
 
 Configure Staroid access token
 ------------------------------
