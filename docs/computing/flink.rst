@@ -2,6 +2,6 @@
 Apache Flink
 ==============
 
-Apache Flink support is planned in Q3-Q4/2020.
+Apache Flink support is planned.
 
 .. include:: ../ref.rst
